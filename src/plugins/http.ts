@@ -1,8 +1,8 @@
-import { ICountry } from '../types/countries';
+import { ICountry } from '../types';
 
 const API_URL = 'https://restcountries.com/v2/all?fields=name,region,area';
 
-export const fetchCountries = async (): Promise<ICountry[]> => {
+export const fetchCountriesAPICall = async (): Promise<ICountry[]> => {
   try {
     const response = await fetch(API_URL);
 
