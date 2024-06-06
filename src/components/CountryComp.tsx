@@ -1,12 +1,9 @@
 import React from 'react';
+import { ICountry } from '../types/countries';
 
-type Country = {
-  name: string;
-  region: string;
-  area: number;
-};
+interface IProps extends ICountry {}
 
-const CountryComp: React.FC<Country> = ({ name, region, area }) => {
+const CountryComp: React.FC<IProps> = ({ name, region, area }) => {
   return (
     <li className='country_list__item'>
       <p>
