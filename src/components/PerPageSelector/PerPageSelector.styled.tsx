@@ -8,10 +8,12 @@ export const Container = styled.div`
 
 export const Label = styled.label`
   font-weight: bold;
+  color: darkgreen;
 `;
 
 export const Select = styled.select`
   padding: 0.25rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color: darkgreen;
 `;

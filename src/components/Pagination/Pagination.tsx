@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PerPageSelector from '../PerPageSelector/PerPageSelector';
 import { TPerPage } from '../../types';
+import * as S from './Pagination.styled';
 
 const DISPLAY_RANGE: number = 3;
 
@@ -38,30 +39,27 @@ const Pagination: React.FC<IProps> = ({ itemsPerPage, totalItems, paginate, curr
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginBottom: '16px', gap: '12px' }}>
-      <nav className='pagination_container'>
-        <ul className='pagination'>
-          <li className={`page_item ${currentPage === 1 ? 'disabled' : ''}`}>
-            <button onClick={handlePreviousClick} className='page_link' disabled={currentPage === 1}>
-              Previous
-            </button>
-          </li>
-          {pageNumbers.map((number) => (
-            <li key={number} className={`page_item ${number === currentPage ? 'active' : ''}`}>
-              <button onClick={() => handlePageChange(number)} className='page_link'>
-                {number}
-              </button>
-            </li>
-          ))}
-          <li className={`page_item ${currentPage === totalPages ? 'disabled' : ''}`}>
-            <button onClick={handleNextClick} className='page_link' disabled={currentPage === totalPages}>
-              Next
-            </button>
-          </li>
-        </ul>
-      </nav>
+    <S.PaginationContainer>
+      <S.PaginationStyled>
+        <S.PageItemStyled className={`${currentPage === 1 ? 'disabled' : ''}`}>
+          <S.PageButtonStyled onClick={handlePreviousClick} disabled={currentPage === 1}>
+            Previous
+          </S.PageButtonStyled>
+        </S.PageItemStyled>
+        {pageNumbers.map((number) => (
+          <S.PageItemStyled key={number} className={`${number === currentPage ? 'active' : ''}`}>
+            <S.PageButtonStyled onClick={() => handlePageChange(number)}>{number}</S.PageButtonStyled>
+          </S.PageItemStyled>
+        ))}
+        <S.PageItemStyled className={`${currentPage === totalPages ? 'disabled' : ''}`}>
+          <S.PageButtonStyled onClick={handleNextClick} disabled={currentPage === totalPages}>
+            Next
+          </S.PageButtonStyled>
+        </S.PageItemStyled>
+      </S.PaginationStyled>
+
       <PerPageSelector itemsPerPage={itemsPerPage} onChange={(perPage) => paginate(1, perPage)} />
-    </div>
+    </S.PaginationContainer>
   );
 };
 

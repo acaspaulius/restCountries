@@ -7,6 +7,7 @@ export const Button = styled.button`
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
   border: none;
   color: darkgreen;
+  margin-top: 1rem;
 
   &:hover {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
@@ -34,5 +35,5 @@ export const LoaderContainer = styled.div`
 `;
 
 export const LoadingText = styled.span`
-  margin-top: 12px;
+  margin-top: 1rem;
 `;

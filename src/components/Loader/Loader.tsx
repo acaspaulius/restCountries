@@ -20,7 +20,7 @@ const Loader: React.FC<IProps> = ({ customAction }) => {
         </>
       ) : (
         <>
-          <span style={{ marginBottom: '12px' }}>{customAction.heading}</span>
+          <span>{customAction.heading}</span>
           <S.Button onClick={customAction.onClick}>{customAction.buttonText}</S.Button>
         </>
       )}

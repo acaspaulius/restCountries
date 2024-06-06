@@ -5,6 +5,7 @@ import Loader from '../Loader/Loader';
 import Filters from '../Filters/Filters';
 import { sortCountries } from './utils';
 import Pagination from '../Pagination/Pagination';
+import * as S from './CountryList.styled';
 
 interface IProps {
   countries: ICountry[];
@@ -95,11 +96,11 @@ const CountryList: React.FC<IProps> = ({ countries: originalCountries, isLoading
       />
       {!isLoading ? (
         <>
-          <ul className='country_list'>
+          <S.CountryListStyled>
             {currentCountries.map((country) => (
               <CountryInfo key={country.name} {...country} />
             ))}
-          </ul>
+          </S.CountryListStyled>
           <Pagination
             itemsPerPage={listParams.perPage}
             totalItems={listParams.totalCount}

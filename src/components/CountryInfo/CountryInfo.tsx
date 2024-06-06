@@ -1,11 +1,12 @@
 import React from 'react';
 import { ICountry } from '../../types';
+import * as S from './CountryInfo.styled';
 
 interface IProps extends ICountry {}
 
 const CountryInfo: React.FC<IProps> = ({ name, region, area }) => {
   return (
-    <li className='country_list__item'>
+    <S.CountryListItemStyled>
       <p>
         <strong>Name:</strong> {name}
       </p>
@@ -15,7 +16,7 @@ const CountryInfo: React.FC<IProps> = ({ name, region, area }) => {
       <p>
         <strong>Area:</strong> {`${area} km²`}
       </p>
-    </li>
+    </S.CountryListItemStyled>
   );
 };
 
