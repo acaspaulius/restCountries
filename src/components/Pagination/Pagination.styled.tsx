@@ -17,13 +17,13 @@ export const PaginationStyled = styled.ul`
 export const PageItemStyled = styled.li`
   margin: 0 5px;
 
-  &.active .page_link {
+  &.active button {
     background-color: #90ff90;
     color: darkgreen;
     border-color: #90ff90;
   }
 
-  &.disabled .page_link {
+  &.disabled button {
     color: grey;
     cursor: not-allowed;
     pointer-events: none;
